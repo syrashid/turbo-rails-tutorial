@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quote = quotes(:first)
+    @quote = Quote.ordered.first
   end
 
   test "Creating a new quote" do
@@ -16,7 +16,7 @@ class QuotesTest < ApplicationSystemTestCase
     click_on "Create quote"
 
     assert_selector "h1", text: "Quotes"
-    assert_text "Capybara quote"
+    assert_text "Example quote"
   end
 
   test "Showing a quote" do
