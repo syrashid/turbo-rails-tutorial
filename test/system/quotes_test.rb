@@ -6,8 +6,7 @@ class QuotesTest < ApplicationSystemTestCase
   end
 
   test "Creating a new quote" do
-    visit quotes_path
-    binding.pry
+    visit quotes_url
     assert_selector "h1", text: "Quotes"
 
     click_on "New quote"
