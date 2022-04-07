@@ -15,18 +15,17 @@ class QuotesController < ApplicationController
     @quote = Quote.new(quote_params)
 
     if @quote.save
-      redirect_to quotes_path, notice: "Quote was successfully created."
+      redirect_to @quote, notice: "Quote was successfully created."
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, notice: "Quote was successfully updated."
+      redirect_to @quote, notice: "Quote was successfully updated."
     else
       render :edit
     end
