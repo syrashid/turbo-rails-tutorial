@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :validatable
 
+  delegate :name, to: :company, prefix: true
+
   belongs_to :company
 
   def name
