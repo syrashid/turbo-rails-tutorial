@@ -2,7 +2,8 @@ require "application_system_test_case"
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quote = Quote.ordered.first
+    login_as users(:accountant)
+    @quote = quotes(:first)
   end
 
   test "Creating a new quote" do
