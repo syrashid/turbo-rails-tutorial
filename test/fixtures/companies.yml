@@ -1,7 +1,5 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+kpmg:
+  name: KPMG
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+pwc:
+  name: PwC
