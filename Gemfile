@@ -54,6 +54,9 @@ gem "bootsnap", require: false
 # For beautiful forms
 gem "simple_form"
 
+# For authentication of users
+gem "devise"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
 
