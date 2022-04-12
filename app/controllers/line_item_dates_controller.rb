@@ -26,6 +26,12 @@ class LineItemDatesController < ApplicationController
     end
   end
 
+  def destroy
+    @line_item_date.destroy
+
+    redirect_to quote_path(@quote), notice: "Date was successfully destroyed."
+  end
+
   private
 
   def line_item_date_params
