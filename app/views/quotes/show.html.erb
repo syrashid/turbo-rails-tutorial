@@ -14,5 +14,7 @@
 
   <%= turbo_frame_tag LineItemDate.new %>
 
-  <%= render @line_item_dates, quote: @quote %>
+  <%= turbo_frame_tag "line_item_dates" do %>
+    <%= render @line_item_dates, quote: @quote %>
+  <% end %>
 </main>
