@@ -6,6 +6,7 @@ class Quote < ApplicationRecord
   scope :ordered, -> { order(id: :desc) }
 
   has_many :line_item_dates, dependent: :destroy
+  has_many :line_items, through: :line_item_dates
 
   # AfterCreateCommit has to do with running only after a successful db transaction after create
   # after_create_commit -> { broadcast_prepend_later_to "quotes" }
