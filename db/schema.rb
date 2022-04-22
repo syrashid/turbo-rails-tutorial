@@ -32,10 +32,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_22_170034) do
 
   create_table "line_items", force: :cascade do |t|
     t.bigint "line_item_date_id", null: false
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
-    t.integer "quantity"
-    t.decimal "unit_price", precision: 10, scale: 2
+    t.integer "quantity", null: false
+    t.decimal "unit_price", precision: 10, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["line_item_date_id"], name: "index_line_items_on_line_item_date_id"
