@@ -17,6 +17,16 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @line_item.update(line_item_params)
+      redirect_to quote_path(@quote), notice: "Item was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def line_item_params
