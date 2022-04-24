@@ -24,7 +24,10 @@ class LineItemsController < ApplicationController
 
   def update
     if @line_item.update(line_item_params)
-      redirect_to quote_path(@quote), notice: "Item was successfully updated."
+      respond_to do |format|
+        format.html { redirect_to quote_path(@quote), notice: "Line item was successfully updated." }
+        format.turbo_stream { flash.now[:notice] = "Line item was successfully updated." }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
