@@ -30,4 +30,8 @@ class LineItemsController < ApplicationController
   def set_line_item_date
     @line_item_date = @quote.line_item_dates.find(params[:line_item_date_id])
   end
+
+  def set_line_item
+    @line_item = @line_item_date.line_items.find(params[:id])
+  end
 end
